@@ -21,7 +21,7 @@ export const EmailListItem: React.FC<EmailListItemProps> = ({
 }) => {
   return (
     <div
-      className={`p-4 border-b border-gray-200 dark:border-gray-700 cursor-pointer transition-colors ${
+      className={`p-3 border-b border-gray-200 dark:border-gray-700 cursor-pointer transition-colors ${
         isSelected 
           ? 'bg-blue-50 dark:bg-blue-900/20' 
           : isRead 

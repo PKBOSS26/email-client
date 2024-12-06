@@ -43,7 +43,7 @@ export const EmailBody: React.FC<EmailBodyProps> = ({
             </span>
           </div>
         </div>
-        <div className="prose dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: email.body || '' }} />
+        <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 max-w-none" dangerouslySetInnerHTML={{ __html: email.body || '' }} />
       </div>
     </div>
   );

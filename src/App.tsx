@@ -1,14 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from './store/store';
-import {
-  fetchEmails,
-  fetchEmailBody,
-  setFilter,
-  toggleFavorite,
-  markAsRead,
-  setSelectedEmail,
-} from './store/emailSlice';
+import {fetchEmails, fetchEmailBody, setFilter, toggleFavorite, markAsRead, setSelectedEmail} from './store/emailSlice';
 import { EmailListItem } from './components/EmailListItem';
 import { EmailBody } from './components/EmailBody';
 import { EmailFilter } from './components/EmailFilter';
@@ -66,7 +59,7 @@ function App() {
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors">
       <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Email Client</h1>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Moonshot Mails</h1>
           <ThemeToggle />
         </div>
       </header>
