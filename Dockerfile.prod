@@ -1,0 +1,28 @@
+# Dockerfile.prod
+
+# Stage 1: Build the application (Development environment)
+FROM node:18 AS build
+
+WORKDIR /app
+
+# (dev + prod)
+COPY package.json package-lock.json ./
+RUN npm install
+
+COPY . .
+
+# Build the production app 
+RUN npm run build
+
+# Stage 2: Serve the built app
+FROM nginx:alpine AS production
+
+WORKDIR /app
+
+# Copy build files from the previous stage into nginx
+COPY --from=build /app/build /usr/share/nginx/html
+
+EXPOSE 80
+
+# Start nginx to serve the build
+CMD ["nginx", "-g", "daemon off;"]
